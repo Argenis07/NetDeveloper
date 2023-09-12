@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    public interface IArtistRepository : IRepository<Artist>
+    public interface IPlaylistRepository : IRepository<Playlist>
     {
-        IEnumerable<Artist> GetArtistsByStore();
-        Artist GetByName(string name);
+        Playlist GetByName(string name);
         int Count();
     }
 }

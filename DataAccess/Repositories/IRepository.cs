@@ -8,6 +8,6 @@ namespace DataAccess.Repositories
         IEnumerable<TEntity> GetAll();
         void Add(TEntity entity);
         void Remove(TEntity entity);
-        int count();
+        int Count();
     }
 }

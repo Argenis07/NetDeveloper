@@ -8,20 +8,20 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    public class AlbumRepository : Repository<Album>, IAlbumRepository
+    public class PlaylistRepository : Repository<Playlist>, IPlaylistRepository
     {
-        public AlbumRepository(DbContext context) : base(context)
+        public PlaylistRepository(ChinookContext context) : base(context)
         {
         }
 
-        public Album GetByTitle(string title)
+        public Playlist GetByName(string name)
         {
-            return chinookcontext.Album.FirstOrDefault(album => album.Title == title);
+            return chinookcontext.Playlists.FirstOrDefault(playlist => playlist.Name == name);
         }
 
         public int Count()
         {
-            return chinookcontext.Artists.Count();
+            return chinookcontext.Playlists.Count();
         }
 
         public ChinookContext chinookcontext

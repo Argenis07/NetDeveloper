@@ -8,11 +8,11 @@ namespace DataAccessTest
     [TestClass]
     public class ArtistRepositoryTest
     {
-        private readonly ArtistRepository _entity;
+        private readonly UnitOfWork _unit;
 
         public ArtistRepositoryTest()
         {
-            _entity = new ArtistRepository();
+            _unit = new UnitOfWork(new ChinookContext());
         }
 
         [TestMethod]
@@ -47,35 +47,43 @@ namespace DataAccessTest
         [TestMethod]
         public void TestEf_Conexion_Artist_Cantidad()
         {
-            var count = _entity.Count();
+            var count = _unit.Artists.Count();
             Assert.AreEqual(count > 0, true);
         }
 
         [TestMethod]
         public void TestEf_ListaArtista()
         {
-            var listaartista = _entity.GetListaArtista();
+            var listaartista = _unit.Artists.GetAll();
             Assert.AreEqual(listaartista.Count() > 0, true);
         }
 
         [TestMethod]
         public void TestEf_ListaArtistaSP()
         {
-            var listaartista = _entity.GetListaArtistaStore();
+            var listaartista = _unit.Artists.GetArtistsByStore();
             Assert.AreEqual(listaartista.Count() > 0, true);
         }
 
         [TestMethod]
         public void TestEf_InsertaArtista()
         {
-            var artistaid = _entity.InsertArtista("nuevo artista EF");
-            Assert.AreEqual(artistaid > 0, true);
+            var newartista = new Artist
+            {
+                Name = "Desde el Unit of work"
+            };
+            _unit.Artists.Add(newartista);
+            int retorno = _unit.Complete();
+
+            var artistanuevo = _unit.Artists.GetByName("Desde el Unit of work");
+            Assert.AreEqual(artistanuevo.Artistid > 0, true);
+            Assert.AreEqual(artistanuevo.Name, "Desde el Unit of work");
         }
 
         [TestMethod]
         public void TestEf_BuscarPorId()
         {
-            var artista = _entity.GetArtistaPorId(1);
+            var artista = _unit.Artists.GetById(1);
             var artistaencontrado = new Artist
             {
                 Artistid = 1,

@@ -23,6 +23,11 @@ namespace DataAccess.Repositories
             return chinookcontext.Artists.FirstOrDefault(artista => artista.Name == name);
         }
 
+        public int Count()
+        {
+            return chinookcontext.Artists.Count();
+        }
+
         public ChinookContext chinookcontext
         {
             get { return Context as ChinookContext; }

@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    public interface IArtistRepository : IRepository<Artist>
+    public interface ICustomerRepository : IRepository<Customer>
     {
-        IEnumerable<Artist> GetArtistsByStore();
-        Artist GetByName(string name);
-        int Count();
+        IEnumerable<CustomerInvoice> Customerinvoice(int invoiceid, string customerEmail);
     }
 }

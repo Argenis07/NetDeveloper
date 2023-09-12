@@ -58,8 +58,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlbumRepositoryTest.cs" />
     <Compile Include="ArtistRepositoryTest.cs" />
-    <Compile Include="EfPlaylistRespositoryTest.cs" />
+    <Compile Include="CustomerRepositoryTest.cs" />
+    <Compile Include="PlaylistRespositoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

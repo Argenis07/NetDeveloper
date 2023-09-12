@@ -19,7 +19,7 @@ namespace DataAccess.Repositories
             Context.Set<TEntity>().Add(entity);
         }
 
-        public int count()
+        public int Count()
         {
             return Context.Set<TEntity>().Count();
         }
