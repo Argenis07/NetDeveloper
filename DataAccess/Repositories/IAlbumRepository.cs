@@ -9,7 +9,9 @@ namespace DataAccess.Repositories
 {
     public interface IAlbumRepository : IRepository<Album>
     {
+        IEnumerable<Album> GetAlbumsByStore();
         Album GetByTitle(string title);
+        IEnumerable<Album> GetAlbumsPage(int pageindex, int pagesize);
         int Count();
     }
 }

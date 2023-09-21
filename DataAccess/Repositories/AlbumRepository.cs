@@ -24,6 +24,20 @@ namespace DataAccess.Repositories
             return chinookcontext.Artists.Count();
         }
 
+        public IEnumerable<Album> GetAlbumsByStore()
+        {
+            return chinookcontext.Database.SqlQuery<Album>("GetListaAlbum");
+        }
+
+        public IEnumerable<Album> GetAlbumsPage(int pageindex, int pagesize)
+        {
+            var query = chinookcontext.Album
+                .OrderBy(a => a.Albumid)
+                .Skip((pageindex - 1) * pagesize)
+                .Take(pagesize);
+            return query.ToList();
+        }
+
         public ChinookContext chinookcontext
         {
             get { return Context as ChinookContext; }

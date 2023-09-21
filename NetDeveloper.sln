@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{88C9F161-96D8-4F2C-8C65-CCF26EA44FE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceService", "InvoiceService\InvoiceService.csproj", "{075A8329-1056-4D2C-B1CA-D8F79462A992}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebForms.Test", "WebForms.Test\WebForms.Test.csproj", "{04DBB917-104E-4844-9903-4423C743C49C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,14 @@ Global
 		{72E308D9-E1AA-4A50-8629-0BF78E9E40CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72E308D9-E1AA-4A50-8629-0BF78E9E40CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72E308D9-E1AA-4A50-8629-0BF78E9E40CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{075A8329-1056-4D2C-B1CA-D8F79462A992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{075A8329-1056-4D2C-B1CA-D8F79462A992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{075A8329-1056-4D2C-B1CA-D8F79462A992}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{075A8329-1056-4D2C-B1CA-D8F79462A992}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04DBB917-104E-4844-9903-4423C743C49C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04DBB917-104E-4844-9903-4423C743C49C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04DBB917-104E-4844-9903-4423C743C49C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04DBB917-104E-4844-9903-4423C743C49C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

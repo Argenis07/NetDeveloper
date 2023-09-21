@@ -11,6 +11,7 @@ namespace DataAccess.Repositories
     {
         IEnumerable<Artist> GetArtistsByStore();
         Artist GetByName(string name);
+        IEnumerable<Artist> GetArtistsPage(int pageindex, int pagesize);
         int Count();
     }
 }

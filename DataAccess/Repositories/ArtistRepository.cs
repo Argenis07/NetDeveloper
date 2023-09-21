@@ -28,6 +28,15 @@ namespace DataAccess.Repositories
             return chinookcontext.Artists.Count();
         }
 
+        public IEnumerable<Artist> GetArtistsPage(int pageindex, int pagesize)
+        {
+            var query = chinookcontext.Artists
+                .OrderBy(a => a.Artistid)
+                .Skip((pageindex - 1) * pagesize)
+                .Take(pagesize);
+            return query.ToList();
+        }
+
         public ChinookContext chinookcontext
         {
             get { return Context as ChinookContext; }
